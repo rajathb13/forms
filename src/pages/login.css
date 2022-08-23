@@ -1,0 +1,51 @@
+ .main{
+    margin-top: 5%;
+    background: linear-gradient(45deg, #75aaf0, #a3e3fa);
+ }
+ 
+ .address-card.card:hover {
+    transform: scale(1.05);
+    border: 2px solid steelblue;
+    cursor: pointer;
+  }
+  .blue-main-gradient {
+    background: linear-gradient(45deg, #75aaf0, #a3e3fa);
+  }
+  .grey-gradient{
+    background: linear-gradient(45deg,  #AFAFAF, #E1E1E1);
+  }
+  .border-button-blue {
+    border: 2px solid #75aaf0;
+  }
+  
+  .height-40 {
+    height: 40px;
+  }
+  
+  .fs-16 {
+    font-size: 16px;
+  }
+  .fw-bold {
+    font-weight: bold;
+  }
+  .border-radius-20 {
+    border-radius: 20px;
+  }
+  .l-spacing-2-0 {
+    letter-spacing: 2px;
+  }
+  .fc-light-black {
+    color: gray;
+  }
+  @media screen and (min-width: 1000px) {
+    .c-border-right {
+      border-right: 1px solid gray;
+    }
+  }
+  .border-20-px{
+    border: 20px;
+  }
+
+  .w-100{
+    width: 30% !important;
+  }
