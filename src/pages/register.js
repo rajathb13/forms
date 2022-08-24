@@ -1,25 +1,24 @@
-import React, {useEffect} from 'react';
+import React ,{useState}from 'react';
 import TextField from '@mui/material/TextField';
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./login.css"
-import validateForm from "./login"
 
 export const RegistrationComponent = () => {
     let navigate = useNavigate();
-    const [formValues, setFormValues] = React.useState({
+    const [formValues, setFormValues] = useState({
         firstName: "",
         lastName: "",
         email: "",
         password: "",
         confirmPassword: ""
     });
-    const [firstNameError,setFirstNameError] = React.useState(false);
-    const [lastNameError,setLastNameError] = React.useState(false);
-    const [emailError,setEmailError] = React.useState(false);
-    const [passwordError,setPasswordError] = React.useState(false);
-    const [confirmPasswordError,setConfirmPasswordError] = React.useState(false);
+    const [firstNameError,setFirstNameError] = useState(false);
+    const [lastNameError,setLastNameError] = useState(false);
+    const [emailError,setEmailError] = useState(false);
+    const [passwordError,setPasswordError] = useState(false);
+    const [confirmPasswordError,setConfirmPasswordError] = useState(false);
     const handleInputChange = (e) => {
         setFormValues({
             ...formValues,
@@ -34,11 +33,9 @@ export const RegistrationComponent = () => {
         let password = formValues.password;
         let confirmPassword = formValues.confirmPassword;
 
-
         fName = fName.trim();
         lName = lName.trim();
         email = email.trim();
-
 
         if(fName.trim().length < 1 && lName.trim().length < 1 && email.trim().length < 1 && password.length < 8){
             toast('All fields must be filled', {
@@ -53,7 +50,6 @@ export const RegistrationComponent = () => {
             return false;
         }
         else if(fName.trim().length < 0 ){
-            console.log("LINE $)")
             toast('Please enter first name', {
                 position: "top-center",
                 autoClose: 2000,
@@ -66,7 +62,6 @@ export const RegistrationComponent = () => {
             return false;
         }
         else if(lName.trim().length < 0 ){
-            console.log("LINE $)")
             toast('Please fill out last name', {
                 position: "top-center",
                 autoClose: 2000,
@@ -79,7 +74,6 @@ export const RegistrationComponent = () => {
             return false;
         }
         else if(email.trim().length < 0){
-            console.log("LINE $)")
             toast('Please enter valid email', {
                 position: "top-center",
                 autoClose: 2000,
@@ -92,7 +86,6 @@ export const RegistrationComponent = () => {
             return false;
         }
         else if(password.length < 8){
-            console.log("LINE $)")
             toast('Please fill out password', {
                 position: "top-center",
                 autoClose: 2000,
@@ -118,7 +111,6 @@ export const RegistrationComponent = () => {
         if(!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))){ 
             setEmailError(true);
             flag = false;
-
         }
         
         //https://stackoverflow.com/questions/12090077/javascript-regular-expression-password-validation-having-special-characters
@@ -142,7 +134,7 @@ export const RegistrationComponent = () => {
 
     }
 
-    const handleSubmit = React.useCallback( (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         let returnVariable  = validateFormSchema(formValues);
         if(returnVariable){
@@ -153,7 +145,7 @@ export const RegistrationComponent = () => {
             navigate("/")        
         }
         
-    },[formValues])
+    }
     return (
         <div className="main">
             <div className="blue-main-gradient py-5">
