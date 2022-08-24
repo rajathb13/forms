@@ -5,7 +5,7 @@ import "./login.css";
 export const Landingpage = () => {
   let navigate = useNavigate();
   function handleSubmit() {
-    navigate("/")
+    navigate("/forms")
     localStorage.clear()
   }
 

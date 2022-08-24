@@ -142,7 +142,7 @@ export const RegistrationComponent = () => {
             localStorage.setItem('LastName', formValues.lastName);
             localStorage.setItem('email', formValues.email);
             localStorage.setItem('pwd', formValues.password)            
-            navigate("/")        
+            navigate("/forms")        
         }
         
     }
@@ -156,7 +156,7 @@ export const RegistrationComponent = () => {
                             <h1>Create an account</h1>
                         </div>
                         <div className="d-flex justify-content-center">
-                            <small className="fc-light-black">Have an account? <a href="/" className="fw-bold cursor-pointer text-black text-decoration-underline">Login</a></small>
+                            <small className="fc-light-black">Have an account? <a href="/forms" className="fw-bold cursor-pointer text-black text-decoration-underline">Login</a></small>
                         </div>
                         <div className="d-flex justify-content-center">
                             <form onSubmit={handleSubmit}>

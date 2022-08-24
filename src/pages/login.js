@@ -56,7 +56,7 @@ export const LoginComponent = () => {
 
     if (flag) {
       if (email === setEmail && password === setpwd) {
-        navigate("/landing");
+        navigate("/forms/landing");
       } else {
         toast("Email or Password in incorrect", {
           position: "top-center",
@@ -128,13 +128,6 @@ export const LoginComponent = () => {
                                 Login
                               </button>
                             </form>
-                            <div className="d-flex justify-content-center">
-                              <a href="/forgot-password">
-                                <small className="text-decoration-none align-content-center text-center fw-bold fc-light-black cursor-pointer l-spacing-2-0">
-                                  Forgot password?
-                                </small>
-                              </a>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -152,7 +145,7 @@ export const LoginComponent = () => {
                           offers, and various coupon codes to use on the website
                         </small>
                         <div className="">
-                          <a href="/register">
+                          <a href="/forms/register">
                             <button
                               type="submit"
                               className="w-100 my-3 blue-main-gradient border-button-blue
